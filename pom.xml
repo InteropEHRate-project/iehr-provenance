@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>eu.interopehrate</groupId>
+  <artifactId>iehr-provenance</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>oss-snapshots</id>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</repository>
+		<repository>
+			<name>IEHR Repo</name>
+			<id>IEHR-Nexus</id>
+			<url>http://213.249.46.206:8081/repository/maven-releases/</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<fhir.version>4.1.0</fhir.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-structures-r4</artifactId>
+			<version>${fhir.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.interopehrate</groupId>
+			<artifactId>securityca</artifactId>
+			<version>0.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.interopehrate</groupId>
+			<artifactId>securityca</artifactId>
+			<version>0.0.3</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.7.28</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-simple</artifactId>
+		    <version>1.7.28</version>
+		    <scope>runtime</scope>
+		</dependency>
+
+	</dependencies>
+  
+</project>
