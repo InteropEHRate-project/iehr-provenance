@@ -1,0 +1,402 @@
+{
+  "resourceType": "Bundle",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "867bac00-fbae-426d-adbd-adc6bdf8b4ec",
+        "name": [
+          {
+            "family": "Ion Popescu"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "e9a0a26e-9034-4816-97db-c9314b5a0120"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "id": "adc18abb-aca4-4c02-9906-d608d97430cb",
+        "meta": {
+          "profile": [
+            "http://interopehrate.eu/fhir/StructureDefinition/Composition-VisitReport-IEHR"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://interopehrate.eu/fhir/StructureDefinition/ProvenanceExtension-IEHR",
+            "valueReference": {
+              "reference": "Provenance/851313cc-cc86-4c31-ae83-91b302880c6c"
+            }
+          }
+        ],
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81214-9"
+            }
+          ]
+        },
+        "encounter": {
+          "reference": "Encounter/7106e06d-03ea-4963-bbf5-575317aa7f65"
+        },
+        "date": "2022-05-16T09:55:44+03:00",
+        "title": "Medical Visit",
+        "section": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8716-3",
+                  "display": "Vital signs"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "Observation/5c72d65f-65c2-4c97-ae02-7175b26e1f92"
+              }
+            ]
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://www.whocc.no/atc",
+                  "code": "10183-2",
+                  "display": "Hospital discharge medications"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "MedicationStatement/7af8fac4-5c9b-42ab-8874-8b48bb5277c8"
+              }
+            ]
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "75326-9",
+                  "display": "Current Diseases"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "Condition/5e5ad5ca-d627-4020-9cb5-abad35b519c7"
+              }
+            ]
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "55110-1",
+                  "display": "Diagnostic Conclusion"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "Condition/f4937823-c97c-4011-b073-aa6d68c9d8af"
+              }
+            ]
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "18776-5",
+                  "display": "Treatment Plan"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "CarePlan/2ddd5e39-2db3-41c2-a7df-cb0d2090e72b"
+              }
+            ]
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "29545-1",
+                  "display": "Instrument Examination"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48765-2",
+                  "display": "Allergies and adverse reactions Document"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "AllergyIntolerance/7fc02a82-acd5-4a94-b28a-fcec641155d3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "7106e06d-03ea-4963-bbf5-575317aa7f65",
+        "meta": {
+          "profile": [
+            "http://interopehrate.eu/fhir/StructureDefinition/Composition-VisitReport-IEHR"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "period": {
+          "start": "2022-05-16T09:55:44+03:00"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5c72d65f-65c2-4c97-ae02-7175b26e1f92",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3097-3",
+              "display": "Creatinine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/23ba578d-350b-4894-a0d4-85647edbbbb8"
+        },
+        "effectiveDateTime": "2022-05-16T09:55:44+03:00",
+        "valueQuantity": {
+          "value": 11.0,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "7af8fac4-5c9b-42ab-8874-8b48bb5277c8",
+        "status": "active",
+        "medicationReference": {
+          "reference": "Medication/74475d7b-ff97-4370-a88b-245af8954c93"
+        },
+        "dosage": [
+          {
+            "additionalInstruction": [
+              {
+                "text": "notes"
+              }
+            ],
+            "timing": {
+              "repeat": {
+                "boundsPeriod": {
+                  "start": "2022-05-16T00:00:00+03:00"
+                },
+                "frequency": 3,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "74475d7b-ff97-4370-a88b-245af8954c93",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.whocc.no/atc",
+              "code": "J01CA04",
+              "display": "Amoxil"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "5e5ad5ca-d627-4020-9cb5-abad35b519c7",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "O24.3",
+              "display": "Pre-existing type 1 diabetes mellitus, in the puerperium"
+            }
+          ]
+        },
+        "onsetDateTime": "2022-05-16T00:00:00+03:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "f4937823-c97c-4011-b073-aa6d68c9d8af",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "55110-1",
+                "display": "Conclusions [Interpretation] Document"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "NOte c"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "2ddd5e39-2db3-41c2-a7df-cb0d2090e72b",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "18776-5",
+                "display": "Plan of care note"
+              }
+            ]
+          }
+        ],
+        "title": "Treatment Plan",
+        "description": " Note t",
+        "created": "2022-05-16T09:55:44+03:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "7fc02a82-acd5-4a94-b28a-fcec641155d3",
+        "category": [
+          "medication"
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc",
+              "code": "48765-2",
+              "display": "name"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Provenance",
+        "id": "851313cc-cc86-4c31-ae83-91b302880c6c",
+        "meta": {
+          "profile": [
+            "http://interopehrate.eu/fhir/StructureDefinition/Provenance-IEHR"
+          ]
+        },
+        "target": [
+          {
+            "reference": "Composition/adc18abb-aca4-4c02-9906-d608d97430cb"
+          }
+        ],
+        "recorded": "2022-05-16T09:55:44.792+03:00",
+        "agent": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "author",
+                  "display": "Author"
+                }
+              ]
+            },
+            "who": {
+              "reference": "Practitioner/867bac00-fbae-426d-adbd-adc6bdf8b4ec"
+            }
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+                  "code": "custodian",
+                  "display": "Custodian"
+                }
+              ]
+            },
+            "who": {
+              "reference": "Organization/e9a0a26e-9034-4816-97db-c9314b5a0120"
+            }
+          }
+        ],
+        "signature": [
+          {
+            "id": "743a965e-a352-4f64-8b33-2d35e4228bde",
+            "type": [
+              {
+                "system": "urn:iso-astm:E1762-95:2013",
+                "code": "1.2.840.10065.1.12.1.5",
+                "display": "Verification Signature"
+              }
+            ],
+            "when": "2022-05-16T09:55:44.792+03:00",
+            "who": {
+              "reference": "Organization/e9a0a26e-9034-4816-97db-c9314b5a0120"
+            },
+            "targetFormat": "json",
+            "sigFormat": "application/jose",
+            "data": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbU5sY25ScFptbGpZWFJsSWpvaVZGVnNTbEpyVGpaUk1FNUNUVEE1YmxGWVpFcFJhMFp1VTFaV1ZXRXpRazVhUjJSYVkwUm9WRTR4VmxoWmFtZDNWVVp3YzJKV2IzaFVSRXBWWlcxa00xSkdSbHBUYTNSMlYydHNiMlJ0VGs5UlZrWkdWRUZ3UTFWVlJqTlhWbEpHWVdzeFJGSlZaRVJhTWpGVVUyMDVkRlpFYUhCbFIzUkNWVlZXVGxKVVNrNWtSVEZJVkZST1QxWkdXbTlVTUZKeVRUQXhSV0ZIYkU1TmJGWTBWMWh3U21WRldsVlJWbEpEV2pBMVYwTnJTa0pVVlRGRlVsUkdiMWx0TVVkaWJIQllUVmQ0YVdKc1NrVlZWbEpHWVdzeFJGSlZaRUpOVmxaR1VUSmtNMWxXU2xaalJVNVNUVVZXYmxWVVNUVmtWMUpJVW01Q2FXSldXalZUVlZwSFRWZEdXRlJ1U1V0WmVrNVRZVWRPZFZWWVpFbGhSMDVQVkZkd1NtUXdNWEZUVkVaT1ZrVnNOVlJXVWxKbFJtUnZXVEExVG1Gc1JqTlVWM0JLVFZVeFZWTlliRTVXUmtZMFZqSndRbHBGTVZOak0yUklWVlpzUlZac1JsSlNRWEJGVVd0d2RsZHNaRWRqTWxKSVlVaGFhbUpYVW05WmJURnpUbXhzV1ZWdVFtbE5hbEl6V2pKa1NtRlZNVUpOUldSRVZUTkdTRlV3YkdsTk1GSlNVbFZLUWxWV1ZrSlJWRkpLVVRCU00xRllaRzVhTUd4TVEydEdkbE5WVGtKVlZWSmFUSHBrV0dFeFFqUlZSMk15VDFkc2VtUnFTa2xaYlZaQ1ZFZE9WbEZzV2xKUFIwa3dVa2hrYTA0d1drOVZNbVJxWkZVNGVsSXlVbkJVYlhCclREQldNbFY2YTNwTGVteHJVMWRuUzB0NWRHOWlSazQwVFZSR1VGbHRlRVpPUkdodFl6TkdTbUV6YUZWV1YwWnlaVVpLYzJNelNrbFNWa0o1VlhwR2EyVlVhRVpaV0ZFd1pFUkdkRkl6U201WFZuQnFUMVp3YjAxWWNFNWpSWFJ5VXpGR01tSjNiekZrTTJSSVRrYzBNMU50WkZaUFYwWnZVMVY0VG1KRWFIbGFWRVpQWW0xYVVWWnRiR3hWUlhCNVVrVndhMDlGUlhwUFIxRjJZa1pHYkdSWFVsWlRSM1J2V2xWT00xa3dhM2RhYm1oRFpGVlpOV1JyVmtaRGJrWlVWbFZOTUZwV1pFWlZSa3BTVGtWU1FsVXliRTFrVjFrMFRrZGFlbUZFVmtWbFJGcEZZVzVTVDJSRk1VVk1NakI0VWtkS2EySXpUa3hpU0ZJeFZqRktSMXBET1hsUFJtaFRZa1prUkZFemIzSmlia2xMVTFjMGRtTnRaRlpoUlRBeVlrVTFVbEV4YkdGaWJuQlBaRWQ0ZFdJelRraFVlbXhZWlZOMFYwOUdXbmxrV0ZwUlpHdHdkVkpzVW1GVFJGWjZUV3hzVkZSWVFUTmlNR2hOVEROb2JWWkVXbHBTUjFKTFkzZHdRbUo2U2xsVGJWWkRVbXQ0VTFVd2FFTmxSa1pDV210U1JFMXRTa05PVmtKRlpXcEZkMWxWVWxKaGJWcExZbnBDU1ZKVk9VVlBSRVpWVGpBeFRsbFhUVFJMZWtwNVltcEtlRkpGTlcxaWJYQXdUVE5hYWtOdGFFaFRWbVJIV2tac1VVOUZPVlJXYlhCcFlXNVNkbFpzWkRCaGFrcG9ZVEprYlZkcVNtMVNNVTVTWW5wV1ExWlZjSHBNTWxaMFV6TkdNazV1V25Sak1VSlNUak5hYlZsVVZuZFRhVGxSVVhwQk1sZEZjMHRVZW1oc1pFaGthR1ZZV2tkTU1IaDZaV3BPTTJFeGIzbGlSVGd6VlVkcmQxUkdWa1paYTFaM1pGaGtSbFpzY0RCbGJXZDNXa1ZhVG1GSE5WWlRSRUpLWlZjMWFGUkdVakJoTWxwcFZGWmtTbGxWYkZwWlVYQndXbFZPV0ZNeldtcFBWVGw1WTFSU2MxZEZSVE5OTWtaclRrWlNVbVJIT1RaTlZuQTBXbE56ZWxGck1XeGhiWE16WTFSYVZVNVRkR3hrYTBvMFdrVjBXRlJXVVRWV1ZVb3lVbnBrWVU5RVZreGxhbVJGUTI1YWNHUkhNV2hqVmswMFZrZEdURkpJU21oVlNHeHRUVVJLUmxGVVJsVmxWelYzVTJ0ak0yUXlVa1ZTUm04MVRrVk9OVTFHY0ZSTmFsbDZZMGQ0YzFKNmFHcFdiRkpPWkVoa1VGRldaRWhVVTNSNVZsVmpTMlJWVmxsVmJWcHpVM3BvUkdSck1IcFdSM1ExV201b1FsUklaRmxhVm5CTFdWTnplVlZVUW5wTE1VRjJaVzFXVDA0eFFteGtWVVpGWXpGYVZGUlVWbmhYV0dSS1VrVkdVbEZWU25aTmVtZ3pXbXhTUWxSUmNFTmFNRFZYVTBaS1RsRnJSbTFQUlZaQ1lXdEdRbFJWU1RSU01FVjRWbGRTU21ReFJscFVWVXBvVVZWYVFtTllhRmRTTUhodFQwVkdSMkl5VFhoUFJFNUdXbnBKTVZOSWJIQmtNbU0xVWtoU1RsRnFRa2hEYTBWNFZsZFNTMVZXUmxoVVZVcFNVakJPUkdNd1pFSlZWbFpIVVc1a1RsRXdTbTVhTTBwRFdqQldSMUZzUm1wU1JVcEZVVmRTUTFvd05WZFRSa1V3VWxWYWJsVldWWGxWVnpGWVlsZGtRbGt6WkRaa1IzTkxWRWhvVWs1R1dUSlplbFpaWVhwc2RGWkdaRTVrTUZKdVYxVlNWMVZxUWxGUlZrWkpUREJLUWxWVlVrSmFNV2h1VkZWRmQxSXdUbFJqVldSVVUxZEplbEpHUmtaUmEwNHpWbFZHUWs1RmJFTmFNVVpFWVhkdk1WRlVVazlYVkdodFRUSldOVlV4YkZSUlYwcFFWRmMxWVU5RWJEVlBSVFZHVXpKMGRHRXpWa0pSTUVsM1ZteGFNRTV1V2tsaWJYaFZVak5hYWxOSWJFSlBSbkJXVTFSU05WZEZhRFZaVms1clQxVldlRU5zUlhoaVYxRjZWa1ZXUmxvd1RqUmlWM0JxVERGcmRtRXlZM3BYVnpGeFVqTlNWRk5ZVmpOYU1XaHFWVlpzUWxrd1pGSmlRM1IyVlZjeFRGWnRiM2xhYTBWNFRrUmtObE5YVGxsaVYzQlVXbFZzVEZwSFVVdGtNSGg2VTBSQk1tUlVXazFXTUhkeVpHeFdhRTR4VmxaaVZrWkVZMnhhZFU5RVVubE5lazAwVlhsME5HSnNhM2hOTUUweVlqQldWMk15Vm5aWFdFSndZMVJPV2xZd05XNVdWbXgwVGtjeGVWZFdVbEJsUVhCNFlrWndhRlZyY3pGaFZrVXhaVlpTYmxOV1FuTmFhMUYyVXpGUmVsbFlSbkJsYTNOM1dWWnNiMVpVWkZWTGVscE9ZbXBhZFU1Vk1XOVpWbHBhWkZWR1Nrc3pWWEpXV0doU1ZUQTFTMDVzVmxSa2JuQlpRMnhrYTFKWVpHbE5NbWhxWWpKWk1FNVdaRk5XV0hBMVYyNUNiR1ZxVWt0a1ZFSkhUMGR3U21Sc2FIVlZWM042VldwUk5WTnRlRmhWVkZaMFZVYzFWV0pVU21oUlZHUkhUVE5HYmxGdVZuRmFSMVpxWW5wVlMxVXlVVEpoYkZwclducFNUbGxWV25CbFYyczFVbTVzV2xac2EzZGtNbFl3WTBaV2VXVnRSbFJsUkdjd1dsVm9VbFJxVmxGVE1EVjBZVlpGZWxsc2J6UmlWemd4WVd0c2NHSnRPVzVUTURWelkxZGtORk5uY0c5WmVrWkdVMFpSY2xReGFITlNia1pHVmtab2MyRXdaRmxPYWtwd1pVWmtkVk5GZUZoVmExWmFWVmRTY2xOR1dUUlpNRTV4WXpKME5GcFhVbWhrUmtKVlkyeFdNbGRWY0c1Vk1EbElXa2RHUjFWcmRGSkRia0pWVGtOemNrNVhNVFZrTUZrMVYwWkZlR0pYVm1oaVZUUjVVbGhhY1ZWWGRHOWlWMXBxVTJ4Wk5GUlZiRkJqU0c5NVlqSlNVR1ZGUlhkWmJrSjZWak5PUW1ScVJuTlhibVJUWkRKS1VtSlVaRXBpZWpBOUluMD0uLlQxaGtjbmh4TVdacGFEbFJSRWRTVURsdFlreEZkR28zTDFRemRrbG9NVEZGVWtzeFRWTnVVMWt2YVZSclZ6QnFTak5VVGxSNVF6UlFOalE0TDA1NE9XRTVSVk5aVkdoTmJXZFpabWxMWTJWMlVtZHlkRVJwVDB4NVVHdDNURFo2YXk5c1QxWm5kR3BpYTFOWllsZHlhWEYzYTJ0aWRuRlRPV2xDWTNCeWNscEZSSG9yZDFaUmMwZDBOVEpMY3pGb2REVmlNa1ZoZFV4SFQycERkbGhKU3pRNGNVbFRVWGhFUWtRM0x6RktjVzFYT0VKNWJHUXZXa1IyVkZkRE5WQmlVbkZYSzNGdlFYZE1TVTR6WVhBdmJXd3JiWFZXVG5oR09USm5jVzV0TWs1aFJuaHpha2hWYWsxelVqUXhhM1JJVVdGWVNWTmlabEJtYzNCNE5qRk5SMmd3TURaSVlrTnJPSEJ3YWxRelVXZEtOVlZEZVhjM05FcHFXWHBpVlhKcFZrRndibFpITm5sMFYzVlRUaTk0YVhFMWVVeFNVSFJETkVSUmFFRTBWWEpXZUZwTmVVdDFaRGR4TDJkeFoxZHJaRFJNYW5reU0yUnFZazRyWmpaWWNXZHpiVk13TkhWUUwwNXJZaXM1UzNkaVoycHJiR3hWVFhocVlpOXRLMUl2WlU1NmFXVndSMHRKY2s1dVJ6QkNUM2x6T0hOUVF6SkhiVzV4T1hSSFlWUlNRMXA2UlVzcmNFNVlNSEowVFc5YWNFazVSMUpIWkdsMGJqSk9TV1E1WjNCb01FMWtVWGhKTUcxRmF5dHhiek5WZG5aaVFuWlBXazVWV2xCUU4wNVJVR1oyWlZOa2JqWnVRWFZJYWxSVVVsRlRiRzFGZUdrcmRIaFdRWHB0YVVwa1VtMXVNUzg0Ym1wYWRqQldUSGhQYlRsSGRrRTVRV3BtTTJ4RFdqRnhWRzl1WjFGdVNscEVWSGhxY0ZBM2NHUXJNREZxTWs4d1dEUndVakJFUlRGcFNIaEtiWEZ6V0hWdE5XbHBUWEZoY1ZsSU1qTkdZV0ZhUTJ4d1V5dHpjM0J1VTA5emFYWTRRMFUxYTJ0VWVHTTViMVpRYkhGalQyd3JWVzE2V0RsWU9FTnBWMUJXUTNjNVltNUxjMHRNWWtrclIzWjJaMWhtUW1VMlRrTmtTRU53VldGaVNrTllOU3R4VFdzOQ=="
+          }
+        ]
+      }
+    }
+  ]
+}

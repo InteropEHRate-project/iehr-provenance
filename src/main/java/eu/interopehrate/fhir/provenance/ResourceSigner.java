@@ -38,6 +38,9 @@ public class ResourceSigner {
 		cryptoManagement = CryptoManagementFactory.create(Constants.IEHR_CA_URL, keyStoreName);
 		// retrieves the health org private key using the alias
         privateKey = cryptoManagement.getPrivateKey(certAlias);
+        if (privateKey == null)
+        	throw new IllegalStateException("Error: Provided Keystore " + keyStoreName + " NOT FOUND in CLASSPATH!");
+        
 		// retrieves the health org certificate: MUST BE DONE ONCE
 		certificateData = cryptoManagement.getUserCertificate(certAlias);
 		// Instantiate the parser

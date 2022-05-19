@@ -2,7 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>eu.interopehrate</groupId>
   <artifactId>iehr-provenance</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2</version>
+  <packaging>jar</packaging>
 
 	<repositories>
 		<repository>
@@ -40,11 +41,6 @@
 			<version>0.0.3</version>
 		</dependency>
 		<dependency>
-			<groupId>eu.interopehrate</groupId>
-			<artifactId>securityca</artifactId>
-			<version>0.0.3</version>
-		</dependency>
-		<dependency>
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>slf4j-api</artifactId>
 		    <version>1.7.28</version>
@@ -57,5 +53,6 @@
 		</dependency>
 
 	</dependencies>
+
   
 </project>

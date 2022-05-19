@@ -54,7 +54,9 @@ public class NodeFactory {
 		else if (resource instanceof Bundle)
 			return new BundleNode((Bundle)resource);
 		else if (resource instanceof CarePlan)
-			throw new IllegalStateException("CarePlane Node has not been implemented yet...");
+			return new CarePlanNode((CarePlan)resource);
+		else if (resource instanceof MedicationStatement)
+			return new MedicationStatementNode((MedicationStatement)resource);
 		else 
 			return new ResourceNode(resource);
 	}

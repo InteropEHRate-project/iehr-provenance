@@ -22,20 +22,15 @@ import eu.interopehrate.fhir.provenance.ResourceNode;
 import eu.interopehrate.fhir.provenance.ResourceSigner;
 
 public class SuccessfullValidation {
-
-	static {
-		System.setProperty("org.slf4j.simpleLogger.log.eu.interopehrate.fhir.provenance", "DEBUG");
-		System.setProperty("org.slf4j.simpleLogger.showLogName", "false");
-		System.setProperty("org.slf4j.simpleLogger.showShortLogName", "true");		
-	}
-
+	private static final String KEY_STORE = "keystore.p12";
+	
 	public static void main(String[] args) throws Exception {
 		Logger logger = LoggerFactory.getLogger(SuccessfullValidation.class);
 		// #1 Initalize ResourceSigner, MUST BE DONE ONCE, and MUST BE DONE 
 		//    ONLY IF THERE IS THE NEED TO CREATE SIGNATURES
 		IParser parser = FhirContext.forR4().newJsonParser();
 		// FTGM_iehr.p12 is in src/main/resources
-		ResourceSigner.INSTANCE.initialize("FTGM_iehr.p12", "FTGM_iehr", parser);
+		ResourceSigner.INSTANCE.initialize(KEY_STORE, "healthorganization", parser);
 		
 		// #2 Load file to be signed and creates the instance of Bundle
 		/*
@@ -75,7 +70,7 @@ public class SuccessfullValidation {
 		logger.info("Provenances size equals to 2: " + (provenances.size() == 2));		
 		
 		// #6 Validates the resources in the Bundle
-		ProvenanceValidator validator = new ProvenanceValidator("FTGM_iehr.p12", parser);
+		ProvenanceValidator validator = new ProvenanceValidator(KEY_STORE, parser);
 		ProvenanceValidationResults res = validator.validateBundle(bundle);
 		logger.info("Validation outcome: " + res.isSuccessful());
 
