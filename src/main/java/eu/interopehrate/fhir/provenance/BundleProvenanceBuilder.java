@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.hl7.fhir.r4.model.Bundle;
+import org.hl7.fhir.r4.model.Bundle.BundleEntryComponent;
 import org.hl7.fhir.r4.model.Organization;
 import org.hl7.fhir.r4.model.Provenance;
 import org.hl7.fhir.r4.model.Resource;
@@ -47,7 +48,26 @@ public class BundleProvenanceBuilder {
         for (Provenance p : provenances)
            	bundle.addEntry().setResource(p);
         
-        bundle.addEntry().setResource(providerOrg);
+        // #5 checks if Organization needs to be added to the bundle
+        boolean found = false;
+		String tmpId; 
+        for (BundleEntryComponent entry : bundle.getEntry()) {
+        	if (entry.getResource() instanceof Organization) {
+        		tmpId = entry.getResource().getIdElement().getIdPart();
+        		if (tmpId == null)
+        			continue;
+        		
+        		if (providerOrg.getIdElement().getIdPart() == null)
+        			continue;
+        		
+        		if (providerOrg.getIdElement().getIdPart().equals(tmpId)) {
+        			found = true;
+        			break;
+        		}
+        	}
+        }
+        if (!found)
+        	bundle.addEntry().setResource(providerOrg);
         
         return provenances;
 	}

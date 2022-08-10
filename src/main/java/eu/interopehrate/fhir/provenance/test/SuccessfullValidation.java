@@ -48,7 +48,7 @@ public class SuccessfullValidation {
 
 		// #3 Creates the provider Organization
 		Organization provider = new Organization();
-		provider.setId("1");
+		provider.setId("2.16.840.1.113883.2.9.2.90907");
         provider.addIdentifier(new Identifier().setValue("FTGM"));
         provider.setActive(true);
         provider.setName("Fondazione Gabriele Monasterio");
@@ -57,6 +57,8 @@ public class SuccessfullValidation {
         .setState("Italy")
         .setPostalCode("00675")
         .setUse(Address.AddressUse.WORK);
+        
+        bundle.addEntry().setResource(provider);
 		
         // **** Only for DEBUG purposes!!
         ResourceNode bundleTree = NodeFactory.createNode(bundle);

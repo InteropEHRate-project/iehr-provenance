@@ -1,6 +1,7 @@
 package eu.interopehrate.fhir.provenance.test;
 
 import java.io.InputStream;
+import java.util.Base64;
 
 import org.hl7.fhir.r4.model.Bundle;
 import org.slf4j.Logger;
@@ -24,9 +25,14 @@ public class ValidateBundle {
 	}
 
 	public static void main(String[] args) throws Exception {
+		
+		System.out.println(Base64.getEncoder().encodeToString("imagePlaceholder1".getBytes()));
+		System.out.println(Base64.getEncoder().encodeToString("imagePlaceholder2".getBytes()));
+		
 		Logger logger = LoggerFactory.getLogger(ValidateBundle.class);
 		IParser parser = FhirContext.forR4().newJsonParser();
-		InputStream is = SuccessfullValidation.class.getClassLoader().getResourceAsStream("HCPAppComposition.json");
+		// InputStream is = SuccessfullValidation.class.getClassLoader().getResourceAsStream("EncEnvLocalConversion.json");
+		InputStream is = SuccessfullValidation.class.getClassLoader().getResourceAsStream("test-all.json");
 		Bundle bundle = (Bundle)parser.parseResource(is);
 		
         // **** Only for DEBUG purposes!!
@@ -44,5 +50,7 @@ public class ValidateBundle {
 			logger.info(r.toString());
 		}
 		
+		parser.setPrettyPrint(true);
+		System.out.println(parser.encodeResourceToString(bundle));
 	}
 }
